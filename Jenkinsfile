@@ -21,13 +21,6 @@ pipeline {
                 }
             }
         }        
-	stage("build jar") {
-		steps {
-			script{
-				buildJar()
-			}
-		}
-	}	
 	stage("build and push image") {
 		steps {
 			script{
