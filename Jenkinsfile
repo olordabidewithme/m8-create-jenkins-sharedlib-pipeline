@@ -20,11 +20,18 @@ pipeline {
                     gv = load "script.groovy"
                 }
             }
-        }        
+        }
+	stage("build Jar") {
+		steps {
+			script{
+				buildJar()
+			}
+		}
+	}        
 	stage("build and push image") {
 		steps {
 			script{
-				buildJar 'olordabidewithme/demo-app-3.0'
+				buildImage 'olordabidewithme/demo-app-3.0'
 				dockerLogin()
 				dockerPush 'olordabidewithme/demo-app-3.0'
 			}
