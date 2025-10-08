@@ -1,12 +1,12 @@
-#!/user/bin/env groovy
+def gv
 
-retriever: modernSCM(
-    [$class: 'GitSCMSource',
-    remote: 'https://github.com/olordabidewithme/m8-jenkins-shared-library.git',
-    credentials: 'git-credentials']
-)
+#!/usr/bin/env groovy
+
+@Library('jenkins-shared-library') _
 
 def gv
+
+
 
 pipeline {   
     agent any
