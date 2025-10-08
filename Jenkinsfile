@@ -31,9 +31,9 @@ pipeline {
 	stage("build and push image") {
 		steps {
 			script{
-				buildImage 'olordabidewithme/demo-app-3.0'
+				buildImage 'olordabidewithme/demo-app:jma-3.0'
 				dockerLogin()
-				dockerPush 'olordabidewithme/demo-app-3.0'
+				dockerPush 'olordabidewithme/demo-app:jma-3.0'
 			}
 		}
 	}
